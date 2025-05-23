@@ -9,3 +9,4 @@ t = float(input("Enter the time period: "))
 si = simple_interest(p, r, t)
 
 print("The simple interest is:", si)
+
