@@ -6,6 +6,7 @@ age = 25
 height = 5.6
 is_student = True
 
+
 print("Name:", name)
 print("Age:", age)
 print("Height:", height)
@@ -41,3 +42,5 @@ with open("sample.txt", "w") as file:
 with open("sample.txt", "r") as file:
     content = file.read()
     print("File Content:\n", content)
+
+
