@@ -39,6 +39,3 @@ for button in buttons:
         row += 1
 
 root.mainloop()
-
-
-
