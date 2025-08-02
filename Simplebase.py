@@ -1,4 +1,3 @@
-
 # Variables and Data Types
 name = "Alice"
 age = 25
