@@ -8,7 +8,6 @@ print("Name:", name)
 print("Age:", age)
 print("Height:", height)
 print("Is Student?", is_student)
-
 # Conditional Statements
 if age >= 18:
     print("You are an adult.")
