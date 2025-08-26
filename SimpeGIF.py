@@ -242,6 +242,7 @@ for f in range(N_FRAMES):
 
     draw_subscribe(layer_sub, int(sub_x), sub_y, scale=pulse, bell_angle=bell_angle, click_ripple=click_ripple)
 
+    
     # --- Like bounce-in (1.0s -> 1.5s)
     like_in_t = clamp((f - 1.0 * FPS) / (0.5 * FPS))
     like_y = LIKE_POS[1] + int((1 - ease_out_back(like_in_t)) * 90)
@@ -265,6 +266,7 @@ for f in range(N_FRAMES):
     paste_with_alpha(img, layer_glow, global_alpha)
 
     frames.append(img.convert("P", palette=Image.ADAPTIVE, dither=Image.NONE))
+
 
 # Save GIF
 out_path = "cta_like_share_subscribe.gif"
