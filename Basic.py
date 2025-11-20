@@ -27,11 +27,9 @@ class Laptop(Device):
 
     def turn_on(self):
         print(f"{self.brand} laptop with {self.ram}GB RAM is now booting up.")
-
 # Usage
 phone = Smartphone("Samsung", "Battery", "Android")
 laptop = Laptop("Dell", "Charger", 16)
-
 phone.turn_on()
 phone.turn_off()
 laptop.turn_on()
