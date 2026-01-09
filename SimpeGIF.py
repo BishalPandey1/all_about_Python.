@@ -184,7 +184,6 @@ def draw_share(layer, cx, cy, angle_deg=0):
     d = ImageDraw.Draw(layer)
     font = get_font(18)
     draw_centered_text(d, (cx, cy + 45), "SHARE", font, WHITE)
-
 def draw_glow(layer, centers, color=(255, 255, 255), intensity=1.0):
     # Simple soft glow by drawing multiple translucent circles
     for (cx, cy) in centers:
@@ -198,7 +197,6 @@ def draw_glow(layer, centers, color=(255, 255, 255), intensity=1.0):
             a = int(lerp(120, 0, t) * intensity)
             dg.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(color[0], color[1], color[2], a))
         layer.alpha_composite(glow)
-
 # -------------------------
 # Timeline
 # -------------------------
@@ -212,7 +210,6 @@ frames = []
 for f in range(N_FRAMES):
     t = f / (N_FRAMES - 1)  # 0..1
     img = Image.new("RGBA", (W, H), BG + (255,))
-
     # Global fade (starts around 45/60 to 60/60)
     fade_t = clamp((f - int(0.75 * N_FRAMES)) / (0.25 * N_FRAMES))
     global_alpha = 1.0 - ease_in_out_sine(fade_t)
@@ -227,7 +224,6 @@ for f in range(N_FRAMES):
     sub_slide_t = clamp(f / (0.5 * FPS))
     sub_x = lerp(-300, SUB_POS[0], ease_out_cubic(sub_slide_t))
     sub_y = SUB_POS[1]
-
     # Pulse + bell spin on "click" (~0.5s -> 0.75s)
     pulse = 0.0
     bell_angle = 0.0
@@ -266,8 +262,6 @@ for f in range(N_FRAMES):
     paste_with_alpha(img, layer_glow, global_alpha)
 
     frames.append(img.convert("P", palette=Image.ADAPTIVE, dither=Image.NONE))
-
-
 # Save GIF
 out_path = "cta_like_share_subscribe.gif"
 frames[0].save(
